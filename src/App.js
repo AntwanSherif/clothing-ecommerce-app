@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/header/Header';
 import Routes from './routes';
-import { auth } from './firebase/firebaseUtils';
-import { createUserProfile } from './services/userServices';
+import { auth, createUserProfile } from './firebase/firebaseUtils';
 import './App.css';
 
 class App extends Component {
@@ -15,12 +14,12 @@ class App extends Component {
 	componentDidMount() {
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 			if(userAuth) {
-				const userRef  = await createUserProfile(userAuth);
+				const userRef = await createUserProfile(userAuth);
 
 				userRef.onSnapshot(snapshot => {
 					this.setState({ 
 						currentUser: snapshot.data()
-					});
+					}, () => console.log(this.state));
 				});
 			} else {
 				this.setState({ currentUser: userAuth });

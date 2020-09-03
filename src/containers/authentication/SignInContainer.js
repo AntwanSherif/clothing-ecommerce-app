@@ -21,7 +21,7 @@ export default class SignInContainer extends Component {
 
         return (
             <div className='sign-in'>
-                <h2>I already have an account</h2>
+                <h2 className='title'>I already have an account</h2>
                 <span>sign in with your email and password</span>
 
                 <form onSubmit={this.handleSubmit}>
