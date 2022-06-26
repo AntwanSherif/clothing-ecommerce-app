@@ -45,7 +45,18 @@
     -->
     
     <!-- Booking Widget Start -->
-      <script src="https://connect.shore.com/widget/loading.js"></script><a class="termine24-widget termine24-widget-custom" style="background-color: #1162e5; color: #ffffff;" target="_blank" href="https://connect.shore.com/widget/instagram-test?locale=en-US">Book Now</a>
-    <!-- Booking Widget End -->
+<script>
+window.shoreBookingSettings = {
+	themeColor: '#0099ff',
+	textColor: '#ffffff',
+	text: 'Book Now',
+	company: 'instagram-test',
+	locale: 'en-US',
+	position: 'right',
+	selectLocation: false,
+};
+</script>
+<script src="https://connect.shore.com/widget/booking.js"></script>
+<!-- Booking Widget End -->
   </body>
 </html>
